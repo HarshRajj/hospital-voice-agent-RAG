@@ -113,7 +113,7 @@ def create_and_upload_index(persist_dir: Path, data_dir: Path):
     print(f"Index saved locally to {persist_dir}")
 
     # Upload to Zilliz Cloud
-    collection_name = "zudu_knowledge_base"
+    collection_name = "coaching_knowledge_base"
     milvus_client = MilvusClient(uri=zilliz_uri, token=zilliz_api_key)
     print(f"Connected to Zilliz Cloud: {zilliz_uri}")
 
