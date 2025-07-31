@@ -1,6 +1,6 @@
-# Voice Agent
+# Voice Agent 🚀
 
-## Overview
+## Overview 🌟
 This project is an AI-driven conversational voice assistant built using LiveKit Agents and LLaMA Index. It leverages Retrieval-Augmented Generation (RAG) with a vector database to provide context-aware responses, optimized for efficient voice interactions. The assistant selectively retrieves document context based on trigger words, ensuring fast responses for simple queries.
 
 Key features:
@@ -8,14 +8,23 @@ Key features:
 - **Customizable Trigger Words**: Easily adjust which queries trigger RAG retrieval.
 - **Scalable Knowledge Base**: Integrates with a vector database for document retrieval.
 
-## Prerequisites
+## About the Creator 👨‍💻
+Hi, I'm Arjun, an AI Engineer passionate about building intelligent systems that make life easier. I designed and developed this project, integrating cutting-edge technologies like:
+- **LLaMA Index** for efficient document indexing and retrieval.
+- **LiveKit Agents** for seamless voice interaction.
+- **OpenAI GPT-4o** for natural language understanding and generation.
+- **Zilliz Cloud** for scalable vector storage.
+
+Feel free to reach out if you have any questions or want to collaborate on exciting AI projects! 🌐
+
+## Prerequisites 📋
 - Python 3.8+
 - A vector database account (e.g., Zilliz Cloud, Milvus)
 - OpenAI API key for LLM (GPT-4o)
 - LiveKit Agents for voice interaction
 - LLaMA Index for RAG integration
 
-## Installation
+## Installation 🛠️
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/voice-agent.git
@@ -49,7 +58,7 @@ Key features:
 5. **Prepare Instructions File**:
    Ensure a `config/prompt.txt` file exists with the system prompt for the assistant.
 
-## Usage
+## Usage 🎙️
 1. **Run the Application**:
    ```bash
    python voice_server.py
@@ -59,15 +68,14 @@ Key features:
 2. **Interact with the Assistant**:
    - Use a voice client compatible with LiveKit to interact with the assistant.
    - Example queries:
-     - "What is the vision of the company?"
-     - "Who is the founder?"
-     - "Hi, my name is Arjun." (RAG skipped for simple queries)
+     - "What courses do you offer?"
+     - "How much does the data science course cost?"
+     - "When is the application deadline?"
 
 3. **Monitor Logs**:
    Logs will display RAG decisions (performed or skipped) and retrieved context for debugging.
 
-## Project Structure
-## Project Structure
+## Project Structure 🗂️
 ```
 coaching_rag_agent/
 ├── src/
@@ -92,20 +100,24 @@ coaching_rag_agent/
 └── requirements.txt                # Python dependencies
 ```
 
-## Customization
-## Customization
+## Customization ✨
 - **Trigger Words**: Modify the `TRIGGER_WORDS` list in `src/agents/voice_agent.py` to control which queries trigger RAG retrieval. Example:
   ```python
   TRIGGER_WORDS = [
       "who", "what", "where", "when", "why", "how",
       "tell me", "explain", "describe", "give me",
       "information about", "details on", "facts about",
-      "use case", "vision", "founder", "contact number",
+      "course", "courses", "learning", "study", "training",
+      "beginner", "intermediate", "advanced", "syllabus",
+      "duration", "fee", "fees", "cost", "price",
+      "deadline", "application", "start date", "enrollment",
+      "data science", "ai", "ml", "web development", "cybersecurity",
+      "python", "certificate", "certification", "support",
   ]
   ```
 - **RAG Parameters**: Adjust `similarity_top_k` in the `as_retriever()` call to balance retrieval speed and accuracy.
 
-## Contributing
+## Contributing 🤝
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature`).
@@ -113,5 +125,5 @@ Contributions are welcome! Please follow these steps:
 4. Push to your branch (`git push origin feature/your-feature`).
 5. Open a pull request.
 
-## License
+## License 📜
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
