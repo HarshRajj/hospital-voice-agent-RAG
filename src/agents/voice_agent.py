@@ -16,8 +16,13 @@ class Assistant(Agent):
         "who", "what", "where", "when", "why", "how",
         "tell me", "explain", "describe", "give me",
         "information about", "details on", "facts about",
-        "use case", "vision", "founder", "contact number",
-        # Add more relevant keywords based on your documents
+        "course", "courses", "learning", "study", "training",
+        "beginner", "intermediate", "advanced", "syllabus",
+        "duration", "fee", "fees", "cost", "price",
+        "deadline", "application", "start date", "enrollment",
+        "data science", "ai", "ml", "web development", "cybersecurity",
+        "python", "certificate", "certification", "support",
+        # Education and course-specific keywords for AIMERS
     ]
 
     def __init__(self, session: AgentSession, index):
