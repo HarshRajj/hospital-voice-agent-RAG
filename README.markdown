@@ -47,7 +47,7 @@ Key features:
    ```
 
 5. **Prepare Instructions File**:
-   Ensure a `config/instructions.txt` file exists with the system prompt for the assistant.
+   Ensure a `config/prompt.txt` file exists with the system prompt for the assistant.
 
 ## Usage
 1. **Run the Application**:
@@ -86,7 +86,7 @@ coaching_rag_agent/
 ├── storage/
 │   └── vector_storage/             # Local vector store persistence
 ├── config/
-│   └── instructions.txt            # System prompt for the assistant
+│   └── prompt.txt                  # System prompt for the assistant
 ├── tests/                          # Test files
 ├── voice_server.py                 # Entry point for starting the LiveKit voice server
 └── requirements.txt                # Python dependencies
