@@ -13,9 +13,9 @@ def load_config():
 
 def get_project_dirs():
     """Return project directory paths."""
-    this_dir = Path(__file__).parent
+    this_dir = Path(__file__).parent.parent.parent  # Go up to project root
     return {
         "this_dir": this_dir,
-        "persist_dir": this_dir / "retrieval-engine-storage",
-        "data_dir": this_dir / "knowledge_base"
+        "persist_dir": this_dir / "storage" / "vector_storage",
+        "data_dir": this_dir / "data" / "knowledge_base"
     }

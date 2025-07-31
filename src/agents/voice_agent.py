@@ -21,7 +21,7 @@ class Assistant(Agent):
     ]
 
     def __init__(self, session: AgentSession, index):
-        with open("instructions.txt", "r") as f:
+        with open("config/instructions.txt", "r") as f:
             instructions = f.read()
         super().__init__(instructions=instructions)
         self.index = index
