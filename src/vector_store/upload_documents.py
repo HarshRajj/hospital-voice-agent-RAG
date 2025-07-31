@@ -153,6 +153,6 @@ def create_and_upload_index(persist_dir: Path, data_dir: Path):
         raise ValueError("Upload failed: No entities stored.")
 
 if __name__ == "__main__":
-    persist_dir = Path("retrieval-engine-storage")
-    data_dir = Path("knowledge_base")
+    persist_dir = Path("storage/vector_storage")
+    data_dir = Path("data/knowledge_base")
     create_and_upload_index(persist_dir, data_dir)

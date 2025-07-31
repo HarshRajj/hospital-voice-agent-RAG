@@ -4,7 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from llama_index.core import VectorStoreIndex
 from llama_index.vector_stores.milvus import MilvusVectorStore
-from Zilliz_cloud.upload_rag import create_and_upload_index
+from ..vector_store.upload_documents import create_and_upload_index
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
