@@ -67,13 +67,13 @@ Key features:
    Logs will display RAG decisions (performed or skipped) and retrieved context for debugging.
 
 ## Project Structure
-- `zudu_agent.py`: Core logic for the voice agent, including selective RAG retrieval and LLM integration.
+- `agent.py`: Core logic for the voice agent, including selective RAG retrieval and LLM integration.
 - `main.py`: Entry point for starting the LiveKit worker and initializing the agent.
 - `instructions.txt`: System prompt for the assistant.
 - `requirements.txt`: List of Python dependencies.
 
 ## Customization
-- **Trigger Words**: Modify the `TRIGGER_WORDS` list in `zudu_agent.py` to control which queries trigger RAG retrieval. Example:
+- **Trigger Words**: Modify the `TRIGGER_WORDS` list in `agent.py` to control which queries trigger RAG retrieval. Example:
   ```python
   TRIGGER_WORDS = [
       "who", "what", "where", "when", "why", "how",

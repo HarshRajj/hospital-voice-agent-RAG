@@ -6,7 +6,7 @@ from livekit.plugins import openai, cartesia, deepgram, silero, elevenlabs
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from config import load_config, get_project_dirs
 from indexing import load_or_create_index
-from zudu_agent import Assistant
+from agent import Assistant
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -38,7 +38,7 @@ async def entrypoint(ctx: agents.JobContext):
                     model="eleven_multilingual_v2"
                 ),
                 vad=silero.VAD.load(),
-                turn_detection=MultilingualModel(),
+                
             )
         except Exception as e:
             logging.error(f"Failed to initialize session: {str(e)}")
