@@ -47,12 +47,12 @@ def create_and_upload_index(persist_dir: Path, data_dir: Path):
         raise ValueError(f"Failed to generate test embedding: {str(e)}")
 
     # Load documents
-    print("Loading PDFs from data/ directory...")
+    print("Loading PDFs from knowledge_base/ directory...")
     reader = SimpleDirectoryReader(data_dir)
     documents = reader.load_data()
     print(f"Loaded {len(documents)} documents")
     if len(documents) == 0:
-        raise ValueError("No documents loaded from data/ directory. Ensure data/ contains valid PDFs.")
+        raise ValueError("No documents loaded from knowledge_base/ directory. Ensure knowledge_base/ contains valid PDFs.")
 
     # Validate and filter documents with extractable text, create new Documents with cleaned text
     cleaned_documents = []
@@ -154,5 +154,5 @@ def create_and_upload_index(persist_dir: Path, data_dir: Path):
 
 if __name__ == "__main__":
     persist_dir = Path("retrieval-engine-storage")
-    data_dir = Path("data")
+    data_dir = Path("knowledge_base")
     create_and_upload_index(persist_dir, data_dir)

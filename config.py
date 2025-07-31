@@ -17,5 +17,5 @@ def get_project_dirs():
     return {
         "this_dir": this_dir,
         "persist_dir": this_dir / "retrieval-engine-storage",
-        "data_dir": this_dir / "data"
+        "data_dir": this_dir / "knowledge_base"
     }
