@@ -43,7 +43,7 @@ print("Index loaded successfully!")
 retriever = index.as_retriever(similarity_top_k=3)
 
 # Test query for RAG
-query = "What are the usecases for Zudu ai ?"
+query = "What are the courses offered by AIMERS?"
 print(f"\nPerforming vector search for query: '{query}'")
 
 # Fetch relevant documents

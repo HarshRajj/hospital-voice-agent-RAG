@@ -64,7 +64,7 @@ async def entrypoint(ctx: agents.JobContext):
 
         # Initial greeting
         await session.generate_reply(
-            instructions="Hi, welcome to Zudu"
+            instructions="Hi, welcome to AIMERS"
         )
 
     except Exception as e:
