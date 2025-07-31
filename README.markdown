@@ -47,12 +47,12 @@ Key features:
    ```
 
 5. **Prepare Instructions File**:
-   Ensure an `instructions.txt` file exists in the project root with the system prompt for the assistant.
+   Ensure a `config/instructions.txt` file exists with the system prompt for the assistant.
 
 ## Usage
 1. **Run the Application**:
    ```bash
-   python main.py
+   python voice_server.py
    ```
    This starts the LiveKit Agents worker, initializes the vector database index, and begins listening for voice inputs.
 
@@ -67,13 +67,34 @@ Key features:
    Logs will display RAG decisions (performed or skipped) and retrieved context for debugging.
 
 ## Project Structure
-- `agent.py`: Core logic for the voice agent, including selective RAG retrieval and LLM integration.
-- `main.py`: Entry point for starting the LiveKit worker and initializing the agent.
-- `instructions.txt`: System prompt for the assistant.
-- `requirements.txt`: List of Python dependencies.
+## Project Structure
+```
+coaching_rag_agent/
+├── src/
+│   ├── agents/
+│   │   └── voice_agent.py          # Core voice agent logic with selective RAG retrieval
+│   ├── core/
+│   │   ├── config.py               # Configuration and project paths
+│   │   └── indexing.py             # Index management and vector store operations
+│   ├── vector_store/
+│   │   ├── upload_documents.py     # Document upload to vector store
+│   │   └── test_retrieval.py       # Test vector store retrieval
+│   └── utils/
+│       └── cloud_utils.py          # Cloud connection utilities
+├── data/
+│   └── knowledge_base/             # PDF documents for RAG
+├── storage/
+│   └── vector_storage/             # Local vector store persistence
+├── config/
+│   └── instructions.txt            # System prompt for the assistant
+├── tests/                          # Test files
+├── voice_server.py                 # Entry point for starting the LiveKit voice server
+└── requirements.txt                # Python dependencies
+```
 
 ## Customization
-- **Trigger Words**: Modify the `TRIGGER_WORDS` list in `agent.py` to control which queries trigger RAG retrieval. Example:
+## Customization
+- **Trigger Words**: Modify the `TRIGGER_WORDS` list in `src/agents/voice_agent.py` to control which queries trigger RAG retrieval. Example:
   ```python
   TRIGGER_WORDS = [
       "who", "what", "where", "when", "why", "how",

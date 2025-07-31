@@ -4,9 +4,9 @@ from livekit import agents
 from livekit.agents import AgentSession, RoomInputOptions
 from livekit.plugins import openai, cartesia, deepgram, silero, elevenlabs
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
-from config import load_config, get_project_dirs
-from indexing import load_or_create_index
-from agent import Assistant
+from src.core.config import load_config, get_project_dirs
+from src.core.indexing import load_or_create_index
+from src.agents.voice_agent import Assistant
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")

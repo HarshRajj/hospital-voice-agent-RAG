@@ -13,7 +13,7 @@ if not zilliz_uri or not zilliz_api_key:
     raise ValueError("ZILLIZ_CLOUD_URI and ZILLIZ_CLOUD_API_KEY must be set in .env")
 
 # Define collection name
-collection_name = "zudu_knowledge_base"
+collection_name = "coaching_knowledge_base"
 
 # Initialize Milvus Client to check collection
 milvus_client = MilvusClient(uri=zilliz_uri, token=zilliz_api_key)

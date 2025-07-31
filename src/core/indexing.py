@@ -4,7 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 from llama_index.core import VectorStoreIndex
 from llama_index.vector_stores.milvus import MilvusVectorStore
-from Zilliz_cloud.upload_rag import create_and_upload_index
+from ..vector_store.upload_documents import create_and_upload_index
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -27,7 +27,7 @@ def load_or_create_index(persist_dir: Path, data_dir: Path):
         print("📦 Local index exists, ensuring it’s uploaded to Zilliz Cloud...")
 
     # Load the index from Zilliz Cloud using MilvusVectorStore
-    collection_name = "zudu_knowledge_base"
+    collection_name = "coaching_knowledge_base"
     vector_store = MilvusVectorStore(
         uri=zilliz_uri,
         token=zilliz_api_key,
