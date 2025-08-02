@@ -13,16 +13,21 @@ logger = logging.getLogger(__name__)
 
 class Assistant(Agent):
     TRIGGER_WORDS = [
+        "appointment", "booking", "schedule", "doctor", "physician",
+        "department", "specialty", "cardiology", "neurology", "pediatrics",
+        "emergency", "urgent", "insurance", "coverage", "accepted",
+        "visiting hours", "location", "directions", "parking",
+        "test", "lab", "x-ray", "mri", "ct scan",
+        "prescription", "medication", "pharmacy",
+        "bill", "billing", "payment", "cost", "fee",
+        "patient", "medical record", "history",
+        "covid", "vaccination", "flu shot",
+        "surgery", "procedure", "consultation",
+        "referral", "specialist", "primary care",
+        # Keep generic question words:
         "who", "what", "where", "when", "why", "how",
         "tell me", "explain", "describe", "give me",
         "information about", "details on", "facts about",
-        "course", "courses", "learning", "study", "training",
-        "beginner", "intermediate", "advanced", "syllabus",
-        "duration", "fee", "fees", "cost", "price",
-        "deadline", "application", "start date", "enrollment",
-        "data science", "ai", "ml", "web development", "cybersecurity",
-        "python", "certificate", "certification", "support",
-        # Education and course-specific keywords for AIMERS
     ]
 
     def __init__(self, session: AgentSession, index):

@@ -27,7 +27,7 @@ def load_or_create_index(persist_dir: Path, data_dir: Path):
         print("📦 Local index exists, ensuring it’s uploaded to Zilliz Cloud...")
 
     # Load the index from Zilliz Cloud using MilvusVectorStore
-    collection_name = "coaching_knowledge_base"
+    collection_name = "hospital_knowledge_base"
     vector_store = MilvusVectorStore(
         uri=zilliz_uri,
         token=zilliz_api_key,
