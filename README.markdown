@@ -14,13 +14,13 @@ Key features:
 - **Scalable Knowledge Base**: Integrates with Zilliz Cloud for medical document retrieval
 
 ## About the Creator 👨‍💻
-Hi, I'm a developer passionate about building intelligent healthcare systems that improve patient experience and hospital efficiency. This project integrates cutting-edge AI technologies specifically for medical environments:
-- **LlamaIndex** for efficient medical document indexing and retrieval
-- **LiveKit Agents** for seamless voice interaction in healthcare settings
-- **OpenAI GPT-4o** for medical query understanding and generation
-- **Zilliz Cloud** for scalable vector storage of medical knowledge
-- **ElevenLabs TTS** for natural voice synthesis
-- **Deepgram STT** for accurate speech recognition
+
+Hi, I'm Harsh, an AI Engineer passionate about building intelligent systems that make life easier. I designed and developed this project, integrating cutting-edge technologies like:
+- **LLaMA Index** for efficient document indexing and retrieval.
+- **LiveKit Agents** for seamless voice interaction.
+- **OpenAI GPT-4o** for natural language understanding and generation.
+- **Zilliz Cloud** for scalable vector storage.
+
 
 Feel free to reach out for collaboration on healthcare AI projects! 🌐
 
@@ -79,7 +79,7 @@ Feel free to reach out for collaboration on healthcare AI projects! 🌐
 2. **Interact with the Hospital Assistant**:
    - Use a voice client compatible with LiveKit to interact with the assistant
    - Example medical queries:
-     - "I need to schedule an appointment with Dr. Smith"
+    - "I need to schedule an appointment with Dr. Smith"
      - "What are your visiting hours?"
      - "Where is the emergency department?"
      - "Do you accept my insurance?"
@@ -143,29 +143,33 @@ TRIGGER_WORDS = [
 - **Silero VAD**: Voice activity detection for seamless conversation flow
 
 ## Customization ✨
-- **Medical Trigger Words**: Modify `TRIGGER_WORDS` in `src/agents/voice_agent.py` for specific medical domains
-- **Voice Configuration**: Update voice ID in `voice_server.py` for different voice characteristics
-- **Knowledge Base**: Add hospital-specific documents to `data/knowledge_base/`
-- **System Prompt**: Customize hospital greeting and behavior in `config/prompt.txt`
-- **RAG Parameters**: Adjust `similarity_top_k` for medical query precision vs. speed balance
 
-## Performance Optimizations 🚀
-1. **Embedding Cache**: Automatic caching prevents redundant API calls
-2. **Batch Processing**: Processes multiple documents efficiently
-3. **Selective RAG**: Only retrieves context for medical queries
-4. **Content Hashing**: MD5-based deduplication of document content
-5. **Retry Logic**: Robust error handling for API failures
+- **Trigger Words**: Modify the `TRIGGER_WORDS` list in `src/agents/voice_agent.py` to control which queries trigger RAG retrieval. Example:
+  ```python
+    TRIGGER_WORDS = [
+        "appointment", "booking", "schedule", "doctor", "physician",
+        "department", "specialty", "cardiology", "neurology", "pediatrics",
+        "emergency", "urgent", "insurance", "coverage", "accepted",
+        "visiting hours", "location", "directions", "parking",
+        "test", "lab", "x-ray", "mri", "ct scan",
+        "prescription", "medication", "pharmacy",
+        "bill", "billing", "payment", "cost", "fee",
+        "patient", "medical record", "history",
+        "covid", "vaccination", "flu shot",
+        "surgery", "procedure", "consultation",
+        "referral", "specialist", "primary care",
+        "follow-up", "check-up", "screening",
+        "symptoms", "diagnosis", "treatment",
+        "who", "what", "where", "when", "why", "how",
+        "tell me", "explain", "describe", "give me",
+        "information about", "details on", "facts about",
+    ]
+  ```
+- **RAG Parameters**: Adjust `similarity_top_k` in the `as_retriever()` call to balance retrieval speed and accuracy.
 
 ## Contributing 🤝
-Contributions to improve healthcare AI are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/medical-improvement`)
-3. Make your changes and commit (`git commit -m "Add medical feature"`)
-4. Push to your branch (`git push origin feature/medical-improvement`)
-5. Open a pull request
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes and commit (`git commit -m "Add your feature"`).
 
-## License 📜
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Healthcare Compliance Note ⚖️
-This system is designed for general hospital information and appointment assistance. For clinical decision support or patient diagnosis, ensure compliance with healthcare regulations (HIPAA, FDA, etc.) and involve qualified medical professionals.
