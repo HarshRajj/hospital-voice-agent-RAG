@@ -3,7 +3,7 @@ import logging
 from livekit import agents
 from livekit.agents import AgentSession, RoomInputOptions
 from livekit.plugins import openai, cartesia, deepgram, silero, elevenlabs
-from livekit.plugins.turn_detector.multilingual import MultilingualModel
+
 from src.core.config import load_config, get_project_dirs
 from src.core.indexing import load_or_create_index
 from src.agents.voice_agent import Assistant
@@ -34,7 +34,8 @@ async def entrypoint(ctx: agents.JobContext):
                 stt=deepgram.STT(model="nova-3", language="multi"),
                 llm=openai.LLM(model="gpt-4o"),
                 tts=elevenlabs.TTS(
-                    voice_id="pzxut4zZz4GImZNlqQ3H",
+                    voice_id="Xb7hH8MSUJpSbSDYk0k2",
+                    # voice_id="pzxut4zZz4GImZNlqQ3H",
                     model="eleven_multilingual_v2"
                 ),
                 vad=silero.VAD.load(),
