@@ -9,7 +9,7 @@ Key features:
 - **Scalable Knowledge Base**: Integrates with a vector database for document retrieval.
 
 ## About the Creator 👨‍💻
-Hi, I'm Arjun, an AI Engineer passionate about building intelligent systems that make life easier. I designed and developed this project, integrating cutting-edge technologies like:
+Hi, I'm Harsh, an AI Engineer passionate about building intelligent systems that make life easier. I designed and developed this project, integrating cutting-edge technologies like:
 - **LLaMA Index** for efficient document indexing and retrieval.
 - **LiveKit Agents** for seamless voice interaction.
 - **OpenAI GPT-4o** for natural language understanding and generation.
@@ -103,17 +103,24 @@ coaching_rag_agent/
 ## Customization ✨
 - **Trigger Words**: Modify the `TRIGGER_WORDS` list in `src/agents/voice_agent.py` to control which queries trigger RAG retrieval. Example:
   ```python
-  TRIGGER_WORDS = [
-      "who", "what", "where", "when", "why", "how",
-      "tell me", "explain", "describe", "give me",
-      "information about", "details on", "facts about",
-      "course", "courses", "learning", "study", "training",
-      "beginner", "intermediate", "advanced", "syllabus",
-      "duration", "fee", "fees", "cost", "price",
-      "deadline", "application", "start date", "enrollment",
-      "data science", "ai", "ml", "web development", "cybersecurity",
-      "python", "certificate", "certification", "support",
-  ]
+    TRIGGER_WORDS = [
+        "appointment", "booking", "schedule", "doctor", "physician",
+        "department", "specialty", "cardiology", "neurology", "pediatrics",
+        "emergency", "urgent", "insurance", "coverage", "accepted",
+        "visiting hours", "location", "directions", "parking",
+        "test", "lab", "x-ray", "mri", "ct scan",
+        "prescription", "medication", "pharmacy",
+        "bill", "billing", "payment", "cost", "fee",
+        "patient", "medical record", "history",
+        "covid", "vaccination", "flu shot",
+        "surgery", "procedure", "consultation",
+        "referral", "specialist", "primary care",
+        "follow-up", "check-up", "screening",
+        "symptoms", "diagnosis", "treatment",
+        "who", "what", "where", "when", "why", "how",
+        "tell me", "explain", "describe", "give me",
+        "information about", "details on", "facts about",
+    ]
   ```
 - **RAG Parameters**: Adjust `similarity_top_k` in the `as_retriever()` call to balance retrieval speed and accuracy.
 
